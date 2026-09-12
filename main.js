@@ -70,10 +70,10 @@ function initialisation_cookie() {
     }else{
         langue = decodeURIComponent(check[1]);
     }
-    charger_langue();
+    //charger_langue();
 }
 
-async function charger_langue() {
+/*async function charger_langue() {
     try {
         const reponse = await fetch("../contenu/"+document.location.pathname.match(/\/Documents\/site_web\/cv\/pages\/(.+)\.html/)[1]+".json");
         if (!reponse.ok) {
@@ -88,7 +88,7 @@ async function charger_langue() {
     } catch (erreur) {
         console.error("Impossible de charger le fichier JSON :", erreur);
     }
-}
+}*/
 
 initialisation_cookie();
 document.addEventListener("DOMContentLoaded",code_commun)
