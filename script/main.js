@@ -11,14 +11,5 @@ function code_commun() {
     section.insertAdjacentHTML("afterend",pied_page[langue]);
 }
 
-/*function initialisation_cookie() {
-    let check = document.cookie.match(new RegExp("(?:^|; )" + nom.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-    if (!check){
-        document.cookie =nom+"="+langue+"; path=/; max-age=604800000; samesite=strict; secure" //domain=vpinelcito.github.io
-    }else{
-        langue = decodeURIComponent(check[1]);
-    }
-    //charger_langue();
-}*/
 document.addEventListener("DOMContentLoaded",code_commun);
 
