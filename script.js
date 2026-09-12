@@ -21,4 +21,4 @@ function initialisation_cookie() {
     //charger_langue();
 }
 document.addEventListener("DOMContentLoaded",code_commun);
-initialisation_cookie();
+
