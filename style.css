@@ -1,0 +1,408 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+
+/* Ancre haut de page */
+#haut{
+    position: absolute;
+    width: auto;
+    height: 0px;
+    top: 0px;
+}
+
+/* Dissimule les checkbox */
+nav input[type=checkbox]{
+    display: none;
+}
+
+/* Elements commun au 2 menus */
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(75, 92, 115);
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    height: 50px;
+    box-shadow: 0px 5px 10px 10px rgb(75, 92, 115);
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+nav ul{
+    list-style-type: none;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a:hover{
+    color: rgb(192, 179, 184);
+}
+
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+    color: rgb(80, 14, 38);
+}
+
+.deroulant > label > a::after{
+    content:"▼";
+    font-size: 12px;
+}
+
+.changement_langue{
+    grid-column: 2;
+    grid-row:1;
+    text-align: right;
+    padding: 20px 15px 20px 0px;
+    color: white;
+}
+.changement_langue span{
+    padding: 0px 5px;
+}
+.changement_langue span:hover{
+    color: rgb(192, 179, 184);
+}
+
+/* Element menu déroulant */
+nav ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 20px 0px;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: rgb(114, 138, 170);
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+/* Permet au checkbox de fonctionner sans accroc */
+@media (min-width: 801px) {
+    nav > ul li:hover .sous{
+        display: block;
+    }
+}
+
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    nav{
+        display: grid;
+        grid-template-columns: 75% 25%;
+    }
+
+    nav label{
+        display: inline-block;
+        width: 100%;
+        padding: 0px 4%;
+    }
+
+    nav label[for=menu]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 10px;
+        grid-column: 1;
+        grid-row: 1;
+        width: 90%;
+        background-image: url("../images/icone_menu.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav label[for=menu].fermeture{
+        background-image: url("../images/icone_fermeture_menu.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 30px
+    }
+
+    nav input#menu{
+        width: 90%;
+    }
+
+    nav ul{
+        display: none;
+        background-color: rgb(114, 138, 170);
+    }
+
+    nav .list_menu{
+        margin-top: 60px;
+        grid-column: 1/3;
+    }
+
+    nav input[type=checkbox]:checked + ul{
+        display: flex;
+        flex-flow : column wrap;
+    }
+
+    nav ul li{
+        flex: 1 1 auto;
+        text-align: left;
+        width: 100%;
+    }
+
+    nav a{
+        padding: 10px 0px;
+    }
+
+    .sous{
+        display: none;/* flex */
+        flex-flow: column wrap;
+        /*box-shadow: 0px 1px 2px #CCC;*/
+        background-color: rgb(137, 150, 167);
+        position: static;
+        width: 100%;
+        z-index: 1000;
+        padding: 0px 4%;
+        box-shadow: none;
+    }
+
+    .sous a{
+        padding-left: 0px;
+    }
+
+    .sous li{
+        flex: 1 1 auto;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Flèche remontée */
+a[class="remonte"]{
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 0px 15px 10px rgb(200, 216, 237);
+    border-radius: 20px;
+    background-color: rgb(200, 216, 237);
+    margin-right: 0px;
+    margin-left:auto;
+    position: absolute;
+    top: -25px;
+    right: 20px;
+    color: black;
+}
+
+a[class="remonte"]:visited{
+    color: black;
+}
+
+a[class="remonte"]:hover{
+    color: white;
+}
+
+/*a[class="remonte"] .information{
+    position: relative;
+    height: 0px;
+    width: 0px;
+    visibility: hidden;
+}
+
+a[class="remonte"]:hover .information{
+    height:30px;
+    width: 500px;
+    visibility: visible;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    color: black;
+}*/
+
+/* Contact */
+.contact{/* effet de flou  sur le haut */
+    display: grid;
+    grid-template-columns: repeat(2, 2fr),1fr;
+    grid-auto-rows: minmax(10px, auto);
+	text-align: center;
+	background-color: rgb(200, 216, 237); /* couleur sombre Koncar */
+	padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    font-size: 16px;
+    z-index: 1;
+    position: relative;
+}
+
+
+.contact .linkedin{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.contact .linkedin a{
+    text-decoration: none;
+    color: purple;
+}
+
+.contact .linkedin a:visited{
+    color: purple;
+}
+
+.contact .mail{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.contact .infos{
+	grid-column: 1/3;
+	grid-row: 2;
+    font-size: 10px;
+    text-align: justify;
+    padding: 0px 80px 0px 130px;
+}
+
+.contact img{
+	grid-column: 3;
+	grid-row: 1/3;
+	position: center;
+    width:179px;
+    height:40px;
+    /**padding-top: 10px;**/
+    padding-bottom: 14px;
+}
+
+/** Entete page **/
+.entete{
+	position: fixed;
+	top: 50px;
+	text-align: center;
+	background-size: auto;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+	z-index: 0;
+	justify-content: center;
+}
+
+.entete .texte{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: 175px;
+    background: radial-gradient(rgba(218, 218, 218, 0.8), rgba(222, 219, 219, 0.8));
+    box-shadow: 0px 0px 20px rgba(189, 182, 182, 0.897);
+    border-radius: 20px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.entete .titre{
+	color: rgb(97, 97, 98);
+	font-size: 60px;
+	font-weight: 600;
+}
+
+.entete .description{
+	font-style: italic;
+	font-size: 25px;
+	color: black;
+}
+
+section article{
+	position: relative;/* Permet le passage en avant plan */
+	z-index: 1;/* Permet de passer en avant plan dans la page */
+    line-height: 1.6;
+    background-color: rgb(229, 235, 244);
+    text-align: justify;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+section article:last-child{
+    padding-bottom: 40px;
+}
+
+section a:not(.remonte){
+    text-decoration: none;
+    color: purple;
+}
+
+.legende{
+	text-align: center;
+	font-style: italic;
+	padding-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+    /* Contact */
+    .contact{/* effet de flou  sur le haut */
+        display: grid;
+        grid-template-columns: 2fr,1fr;
+        grid-auto-rows: minmax(10px, auto);
+        text-align: center;
+        background-color: rgb(200, 216, 237); /* couleur sombre Koncar */
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        font-size: 16px;
+        z-index: 1;
+        position: relative;
+    }
+
+
+    .contact .linkedin{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .contact .linkedin a{
+        text-decoration: none;
+        color: purple;
+    }
+
+    .contact .linkedin a:visited{
+        color: purple;
+    }
+
+    .contact .mail{
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+
+    .contact .infos{
+        grid-column: 1/3;
+        grid-row: 3;
+        font-size: 10px;
+        text-align: justify;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .contact img{
+        grid-column: 2;
+        grid-row: 1;
+        position: center;
+        width:179px;
+        height:40px;
+        /**padding-top: 10px;**/
+        padding-bottom: 14px;
+    }
+}
