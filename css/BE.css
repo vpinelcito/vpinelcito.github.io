@@ -37,7 +37,10 @@ article{
 	margin-right: auto;
 	padding-top: 5px;
 }
-
+.illustration img{
+	width: 100%;
+	height: auto;
+}
 .texte ul{
 	padding-left: 20px;
 }
