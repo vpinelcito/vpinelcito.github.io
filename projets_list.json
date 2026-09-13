@@ -1,0 +1,49 @@
+{
+    "articles":[
+        {
+            "img":"",
+            "fr":{
+                "titre":"Bureau d'études n°1 (BE1) : Rainureuse Triplex",
+                "tags":["Bureau d'études","1ère année"],
+                "date":"22/05/2026",
+                "description":""
+            },
+            "en":{
+                "titre":"Design Office No. 1 (BE1): Triplex Grooving Machine",
+                "tags":["Design Office","1st year"],
+                "date":"22/05/2026",
+                "description":""
+            }
+        },
+        {
+            "img":"",
+            "fr":{
+                "titre":"Bureau d'études n°2 (BE2) : Testeur d'ampoule halogène",
+                "tags":["Bureau d'études","1ère année"],
+                "date":"24/05/2026",
+                "description":""
+            },
+            "en":{
+                "titre":"Design Office No. 2 (BE2): Halogen bulb tester",
+                "tags":["Design Office","1st year"],
+                "date":"22/05/2026",
+                "description":""
+            }
+        },
+        {
+            "img":"",
+            "fr":{
+                "titre":"Bureau d'études n°3 (BE3) : Spin Coater",
+                "tags":["Bureau d'études","1ère année"],
+                "date":"24/05/2026",
+                "description":""
+            },
+            "en":{
+                "titre":"Design Office No. 3 (BE3): Spin Coater",
+                "tags":["Design Office","1st year"],
+                "date":"24/05/2026",
+                "description":""
+            }
+        }
+    ]
+}
