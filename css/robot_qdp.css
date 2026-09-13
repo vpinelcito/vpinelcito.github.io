@@ -1,0 +1,177 @@
+section article:first-of-type:not(.intro){
+    margin-top: 34%;
+}
+
+article:not(.no){
+    padding-top: 60px;
+}
+
+article ul{
+    padding-left: 20px;
+}
+
+.entete{
+    background-image: url("../images/generique_opaque_ok3.jpg");
+    background-position: top -50px left;
+}
+
+.tableau{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-auto-rows: auto;
+}
+
+#infos{
+    padding-top: 20px;
+    grid-column: 1/3;
+    grid-row: 1;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.intro{
+    padding-top: 20px;
+    grid-column: 1/3;
+    grid-row: 2;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.robot_reel{
+    grid-column: 3; 
+    grid-row: 1/4;
+}
+
+
+
+.cao_robot{
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#cao{
+    grid-column: 2/4;
+    grid-row: 4;
+    padding-left: 20px;
+    padding-right: 0px;
+}
+
+.jet_deau{
+    grid-column: 1;
+    grid-row: 5;
+}
+
+#prod{
+    grid-column: 2/4;
+    grid-row: 5;
+    padding-left: 20px;
+    padding-right: 0px;
+}
+
+.image_conclusion{
+    grid-column: 3;
+    grid-row: 7/9;
+}
+
+
+
+.conclusion{
+    grid-column: 1/3;
+    grid-row: 8;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.tableau img{
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+}
+
+@media (min-width: 769px){
+    #assemblage{
+    grid-column: 1/3;
+    grid-row: 7;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+#cdc{
+    grid-column: 1/3;
+    grid-row: 3;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+}
+
+@media (max-width: 768px){
+    .entete{
+        background-image: url("../images/generique_opaque_ok3_tel.jpg");
+        background-position: top 0px left;
+    }
+    section article:first-of-type:not(.intro){
+        margin-top: 85%;
+    }
+    .tableau{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-auto-rows: auto;
+    }
+    .tableau article{
+        padding: 1em;
+    }
+    .tableau div:not(.nodiv){
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        height: auto;
+    }
+    .tableau img{
+        width: 100%;
+        height: auto;
+        padding-top: 20px;
+    }
+    #infos{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .intro{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .robot_reel{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    #cdc{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .cao_robot{
+        grid-column: 1;
+        grid-row: 5;
+    }
+    #cao{
+        grid-column: 1;
+        grid-row: 6;
+    }
+    .jet_deau{
+        grid-column: 1;
+        grid-row: 7;
+    }
+    #prod{
+        grid-column: 1;
+        grid-row: 8;
+    }
+    #assemblage{
+        grid-column: 1;
+        grid-row: 9;
+    }
+    .image_conclusion{
+        grid-column: 1;
+        grid-row: 10;
+    }
+    .conclusion{
+        grid-column: 1;
+        grid-row: 11;
+    }
+}
