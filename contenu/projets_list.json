@@ -44,6 +44,21 @@
                 "date":"24/05/2026",
                 "description":""
             }
+        },
+        {
+            "img":"",
+            "fr":{
+                "titre":"Robot quadrupède",
+                "tags":["Projet","1ère année"],
+                "date":"24/05/2026",
+                "description":""
+            },
+            "en":{
+                "titre":"Quadruped robot",
+                "tags":["Project","1st year"],
+                "date":"24/05/2026",
+                "description":""
+            }
         }
     ]
 }
