@@ -505,6 +505,6 @@ a.suivi::after{
     }
 
     article:first-of-type{
-        margin-top: 70%;
+        margin-top: 100%;
     }
 }
