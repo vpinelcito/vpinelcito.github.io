@@ -12,18 +12,29 @@
         "2025":"2025",
         "c2025":"<li><b>Intégration de l'IUT de Cachan en formation BUT Génie Mécanique et Productique</b></li><li><b>Obtention d'un baccalauréat mention TB en filière générale</b> (17,6 de moyenne)<br><span>Spécialités Mathématiques, Physique-Chimie, Numériques et Sciences de l'informatique</span><br><span>Option Mathématiques Expertes et Langues et Cultures Anciennes</span></li>",
         "2024":"2024",
-        "c2024":"<b>Participation au Concours Général d'Histoire</b><br>Épreuve réalisée durant ma classe de première</p>",
+        "c2024":"<b>Participation au Concours Général d'Histoire</b><br>Épreuve réalisée durant ma classe de première",
         "2022":"2022",
         "c2022":"<b>Intégration d'un lycée en filière générale</b>",
         "2021":"2021",
         "c2021":"<b>1er prix de l'Académie d'Amiens des Olympiades de Mathématiques</b><br>des élèves de 4ème"
     },
     "en":{
-        "titre_section":"Design Office",
-        "description":"The Design Office course introduces students to the use of SolidWorks software, the conventions and standards of technical drawing, the fundamental principles of design and the technical solutions commonly used in industry.",
-        "legende":"Vincent",
-        "titre":"Design Office No. 1 (BE1): Triplex Grooving Machine",
-        "texte1":"The first session of the design office course involved introducing students to and teaching them the basics of computer-aided design (CAD) software: <a href=“https://www.solidworks.com/en”>SolidWorks</a>. Our project focused on a groove-cutting machine of the sort available on the market. A grooving machine is mainly used to create the grooves required for fitting plastic components designed to protect the edges of a wall.<br>While working on this project, I discovered the features and capabilities of SolidWorks. I learnt how to convert a piece from a 2D drawing into a 3D model suitable for CAD. After modelling multiple parts, I was able to assemble the entire system I was designing within SolidWorks.",
-        "texte2":"Once these steps were complete, I had to set about creating technical drawings specifying the dimensions and specifications of each part I had modelled in the software. At the same time, I prepared the rendering documents for my assembly with a view to potentially submitting the design dossier to the production engineering department.<br>This first experience in the design office course enabled me to learn how to use SolidWorks and to familiarise myself with the standards of technical drawing. It was an enriching experience for me, allowing me to discover 3D modelling using SolidWorks.<br><br><a href='./BE2.html' class='suivi'>See my second design office&nbsp;</a>"
+        "titre_section":"About Vincent PINEL-CITOLLEUX",
+        "description":"Find out who’s behind that rather long name...",
+        "legende1":"Vincent",
+        "legende2":"Lego ukulele",
+        "titre1":"Who am I?",
+        "texte1":"My name is Vincent; I was born in 2008 in the lush Oise department (60). Ever since I was very young, I have been fascinated by the objects around me. I’ve always asked myself countless questions about them. What needs do they fulfil? What purpose were they created for? How do they manage to perform their function? How are they made? All these questions, which are perfectly normal for a child, have stayed with me. I’ve remained curious about many different subjects, with a thirst for knowledge. In this quest for understanding, I sought to replicate these objects and their technical functions using the materials I had to hand: Lego bricks. Without realising it, I adopted an approach that combined design and construction to achieve the most accurate result possible. For example, when I was 8 years old and wanted to play the ukulele, I tried to build one out of Lego. The instrument sounded absolutely dreadful but fulfilled its primary function: to produce sounds. Thanks to all these experiments, one thing became clear: I have always wanted – and still do – to pursue a career where I can design, innovate or invent. My preference for mechanical systems and scientific fields has steered my creative drive towards the fields of mechanics and mechatronics.",
+        "texte2":"Part of the upbringing my parents gave me placed great importance on being useful and helping others through our actions. I have held on to this philosophy and wish to incorporate it into my future career. I therefore wish to pursue a career whose impact and outcomes are positive for as many people as possible. I have found a career that meets these expectations: Research and Development Engineer.",
+        "texte3":"Throughout my school career, I focused on science from secondary school onwards, with a particular interest in mathematics and physics. At the same time, keen to understand how the internet works, I taught myself how to develop websites. This knowledge has proved useful, as I built the website you are currently viewing entirely by myself. Once at sixth form, I obtained a general A-level qualification with a focus on science subjects, chosen with a view to my higher education.<br>My interest in mechanical systems led me to enrol on the BUT (University Technical Diploma) in Mechanical and Production Engineering at the IUT in Cachan, with the aim of subsequently joining an engineering school or undertaking a Master’s degree.",
+        "titre2":"My educational background and related events",
+        "2025":"2025",
+        "c2025":"<li><b>Admission to the Cachan University Institute of Technology (IUT) for the BUT in Mechanical and Production Engineering</b></li><li><b>Awarded a baccalaureate with ‘TB’ distinction in the general stream</b> (average mark: 17.6)<br><span>Specialisms: Mathematics, Physics and Chemistry, Computational Sciences and Computer Science</span><br><span>Advanced Mathematics and Ancient Languages and Cultures</span></li>",
+        "2024":"2024",
+        "c2024":"<b>Entry for the Concours Général d'Histoire</b><br>Exam taken whilst I was in the première year",
+        "2022":"2022",
+        "c2022":"<b>Enrolment at a sixth-form college offering the general stream</b>",
+        "2021":"2021",
+        "c2021":"<b>First prize from the Amiens Academy at the Mathematics Olympiad</b><br>for Year 8 pupils"
     }
 }
