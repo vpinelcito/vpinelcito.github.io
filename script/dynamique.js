@@ -8,7 +8,7 @@ body.addEventListener("click", (evenement) => {
         window.location.reload();
     }else if(evenement.target && evenement.target.id === "deploye"){
         document.getElementById(evenement.target.id).classList.toggle("fermeture");
-    }else if(evenement.target && evenement.target.id === "fermeture_cookie"){
+    }else if(evenement.target && evenement.target.id === "cookie"){
         document.getElementById("cookie").style.display = "none";
     }
 });

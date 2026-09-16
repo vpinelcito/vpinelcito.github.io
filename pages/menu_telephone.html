@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+
+/* Ancre haut de page */
+#haut{
+    position: absolute;
+    width: auto;
+    height: 0px;
+    top: 0px;
+}
+
+/* Dissimule les checkbox */
+nav input[type=checkbox]{
+    display: none;
+}
+
+/* Elements commun au 2 menus */
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(75, 92, 115);
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    height: 50px;
+    box-shadow: 0px 5px 10px 10px rgb(75, 92, 115);
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+nav ul{
+    list-style-type: none;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a:hover{
+    color: rgb(192, 179, 184);
+}
+
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+    color: rgb(80, 14, 38);
+}
+
+.deroulant > label > a::after{
+    content:"▼";
+    font-size: 12px;
+}
+
+.changement_langue{
+    grid-column: 2;
+    grid-row:1;
+    text-align: right;
+    padding: 20px 15px 20px 0px;
+    color: white;
+}
+.changement_langue span{
+    padding: 0px 5px;
+}
+.changement_langue span:hover{
+    color: rgb(192, 179, 184);
+}
+
+/* Element menu déroulant */
+nav ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 20px 0px;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: rgb(114, 138, 170);
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+/* Permet au checkbox de fonctionner sans accroc */
+@media (min-width: 801px) {
+    nav > ul li:hover .sous{
+        display: block;
+    }
+}
+
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    nav{
+        display: grid;
+        grid-template-columns: 75% 25%;
+    }
+
+    nav label{
+        display: inline-block;
+        width: 100%;
+        padding: 0px 4%;
+    }
+
+    nav label[for=menu]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 10px;
+        grid-column: 1;
+        grid-row: 1;
+        width: 90%;
+        background-image: url("../images/icone_menu.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    nav label[for=menu].fermeture{
+        background-image: url("../images/icone_fermeture_menu.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 30px
+    }
+
+    nav input#menu{
+        width: 90%;
+    }
+
+    nav ul{
+        display: none;
+        background-color: rgb(114, 138, 170);
+    }
+
+    nav .list_menu{
+        margin-top: 60px;
+        grid-column: 1/3;
+    }
+
+    nav input[type=checkbox]:checked + ul{
+        display: flex;
+        flex-flow : column wrap;
+    }
+
+    nav ul li{
+        flex: 1 1 auto;
+        text-align: left;
+        width: 100%;
+    }
+
+    nav a{
+        padding: 10px 0px;
+    }
+
+    .sous{
+        display: none;/* flex */
+        flex-flow: column wrap;
+        /*box-shadow: 0px 1px 2px #CCC;*/
+        background-color: rgb(137, 150, 167);
+        position: static;
+        width: 100%;
+        z-index: 1000;
+        padding: 0px 4%;
+        box-shadow: none;
+    }
+
+    .sous a{
+        padding-left: 0px;
+    }
+
+    .sous li{
+        flex: 1 1 auto;
+        width: 100%;
+        text-align: left;
+    }
+}
+    </style>-->
+    <link rel="stylesheet" href="../css/style.css"/>
+    <style></style>
+    <script src="../script/main.js"></script>
+</head>
+<body>
+<section>
+    <article id="BE1">
+				<div class="gauche">
+					<div class="illustration">
+						<img src="../images/BE1.jpg" alt="Illustration du premier bureau d'études"/>
+						<p class="legende">Vue de coupe de la Rainureuse Triplex</p>
+					</div>
+					<h2>Bureau d'études n°1 (BE1) : Rainureuse Triplex</h2>
+					<div class="texte">
+						<p>La première session de cours de bureau d’études consistait à faire découvrir et apprendre aux étudiants, les rudiments du logiciel de conception assistée par ordinateur (CAO) : <a href="https://www.solidworks.com/fr"><!-- Lien solidworks-->Solidworks</a>. Notre sujet portait sur une rainureuse que l'on pourrait trouver dans le commerce. Une rainureuse sert principalement à réaliser les rainures nécessaires à la pose d'éléments en plastiques servant à protéger les arêtes d'un mur. <br>Ainsi, durant la réalisation de ce sujet, j'ai découvert les fonctionnalités et les possibilités du logiciel Solidworks. J’ai appris à transformer une pièce sur un plan 2D en un modèle 3D utilisable en CAO. Après la reproduction de multiples pièces, je pouvais réaliser l’assemblage de l’ensemble du système à concevoir dans le logiciel Solidworks. Une fois ces étapes réalisées, je devais m’atteler à la création de mise en plan indiquant les dimensions et spécifications de chaque pièce que j’avais reproduite dans le logiciel. Dans le même cas, je préparais les documents de rendus de mon ensemble en vue d’un potentiel passage du dossier de définition au bureau des méthodes.<br>Ce premier bureau d’études m’a permis d’apprendre à utiliser Solidworks ainsi que de découvrir les normes du dessin industriel. Cela a été une experience enrichissante pour moi, qui m'a permis de découvrir la modélisation 3D à l'aide du logiciel Solidworks.</p>
+					</div>
+				</div>
+			</article>
+    </section>
+    <footer class='contact'><a class='remonte' href='#haut'>▲</a><div class='mail'>vincent.pinel-citolleux@universite-paris-saclay.fr</div><div class='linkedin'><a href='https://www.linkedin.com/in/vincent-pinel-citolleux-b712693a1/'>LinkedIn</a></div><div class='infos'>Pour des soucis de confidentialité, certaines informations sont imprécises. Pour plus de renseignements, merci de me contacter sur mon adresse e-mail. Vincent PINEL-CITOLLEUX, toute reproduction interdite.</div><img src='../images/logo_iut.png' class='logo_IUT' alt='Logo de l\\'IUT de Cachan et de l\\'université Paris Saclay'></img></footer>
+    <!--Ce site web a été créé par Vincent PINEL-CITOLLEUX lors d'un travail sur le portfolio, dans le cadre du cours de Doria Dacien. Travail réalisé en 2026, en première année de BUT Génie Mécanique et Productique.<br>-->
+<script src="../script/dynamique.js"></script>
+</body>
+</html>

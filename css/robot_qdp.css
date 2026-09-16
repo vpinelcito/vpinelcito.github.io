@@ -1,6 +1,6 @@
-section article:first-of-type:not(.intro){
+/*section article:first-of-type:not(.intro){
     margin-top: 34%;
-}
+}*/
 
 article:not(.no){
     padding-top: 60px;

@@ -101,10 +101,14 @@ nav a{
     z-index: 1000;
 }
 /* Permet au checkbox de fonctionner sans accroc */
-@media (min-width: 801px) {
+@media (min-width: 769px) {
     nav > ul li:hover .sous{
         display: block;
     }
+}
+
+section article:first-of-type:not(.intro){
+    margin-top: 30em;
 }
 
 .sous li{
@@ -258,10 +262,6 @@ section article{
     box-shadow: -30em 0 5px 2px rgba(229, 235, 244, 0.8), 30em 0 5px 2px rgba(229, 235, 244, 0.8);*/
 }
 
-section article:first-of-type:not(.intro){
-    margin-top: 33%;
-}
-
 section article:last-child{
     padding-bottom: 40px;
 }
@@ -378,6 +378,7 @@ a.suivi::after{
     .contact .mail{
         grid-column: 1/3;
         grid-row: 2;
+        padding-bottom: 10px;
     }
 
     .contact .infos{
@@ -385,7 +386,7 @@ a.suivi::after{
         grid-row: 3;
         font-size: 10px;
         text-align: justify;
-        padding: 0px 20px 0px 20px;
+        padding: 0px 20px 20px 20px;
     }
 
     .contact img{
@@ -502,9 +503,5 @@ a.suivi::after{
         /*margin-left: 16%;
         margin-right: 16%;
         box-shadow: -30em 0 5px 2px rgba(229, 235, 244, 0.8), 30em 0 5px 2px rgba(229, 235, 244, 0.8);*/
-    }
-
-    article:first-of-type:not(.intro){
-        margin-top: 100%;
     }
 }

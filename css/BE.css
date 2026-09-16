@@ -1,5 +1,5 @@
 .entete{
-	background-image: url("../images/fond_pages_be.png");
+	background-image: url("../images/BE2_ecorche.png");
 }
 
 section{
@@ -37,10 +37,12 @@ article{
 	margin-right: auto;
 	padding-top: 5px;
 }
+
 .illustration img{
 	width: 100%;
 	height: auto;
 }
+
 .texte ul{
 	padding-left: 20px;
 }
@@ -53,6 +55,9 @@ article h2{
 }
 
 @media (min-width: 768px){
+	.entete{
+		background-image: url("../images/fond_pages_be.png");
+	}
 	article{
 		display: grid;
 		grid-template-columns: 40% 60%;

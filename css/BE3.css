@@ -1,5 +1,5 @@
 .entete{
-	background-image: url("../images/fond_pages_be.png");
+	background-image: url("../images/BE3_ecorche.jpg");
 }
 
 section{
@@ -63,6 +63,9 @@ article h2{
 }
 
 @media (min-width: 768px){
+	.entete{
+		background-image: url("../images/fond_pages_be.png");
+	}
     article{
 	    display: grid;
 	    grid-template-columns: 50% 50%;

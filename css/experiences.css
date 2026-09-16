@@ -1,0 +1,101 @@
+h1{
+  margin-top : 200px;
+  margin-bottom: 200px;
+  text-align: center;
+}
+
+
+article{
+    padding-top: 20px;
+}
+
+article h2{
+    padding-bottom: 15px;
+}
+
+.entete{
+    background-image: url(../images/fond_ephad.jpg);
+    background-size: 100%;
+    background-position: top -250px left;
+}
+
+#associatives{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-auto-rows: auto;
+}
+
+#associatives h2{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#associatives #texte1{
+    grid-column: 1;
+    grid-row: 2/4;
+    padding-right: 20px;
+}
+#associatives #texte2{
+    grid-column: 1;
+    grid-row: 4/6;
+    padding-right: 20px;
+}
+
+#associatives img{
+    grid-column: 2;
+    grid-row: 1/5;
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#associatives .legende{
+    grid-column: 2;
+    grid-row: 5;
+}
+
+@media screen and (max-width: 768px){
+    .entete{
+        background-image: url(../images/fond_ephad_telephone.jpg);
+        background-size: 100%;
+        background-position: top -50px left;
+    }
+
+    #associatives{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-auto-rows: auto;
+    }
+
+    #associatives h2{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #associatives #texte1{
+        grid-column: 1;
+        grid-row: 2;
+        padding-right: 0px;
+    }
+    #associatives #texte2{
+        grid-column: 1;
+        grid-row: 5;
+        padding-right: 0px;
+    }
+
+    #associatives img{
+        grid-column: 1;
+        grid-row: 3;
+        width: 50%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+
+    #associatives .legende{
+        grid-column: 1;
+        grid-row: 4;
+    }
+}

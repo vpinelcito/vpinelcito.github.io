@@ -1,0 +1,29 @@
+{
+    "fr":{
+        "titre_section":"À propos de<br>Vincent PINEL-CITOLLEUX",
+        "description":"Découvrez la personne qui se cache derrière ce nom si long...",
+        "legende1":"Vincent",
+        "legende2":"Ukulélé en Lego",
+        "titre1":"Qui suis-je ?",
+        "texte1":"Je m'appelle Vincent, je suis né en 2008 dans le département verdoyant de l'Oise (60). Depuis mon plus jeune âge, je suis fasciné par les objets qui m'entourent. Je me suis toujours posé de multiples questions devant ces derniers. À quels besoins doivent-ils répondre ? À quelle fin ont-ils été créés ? Par quels moyens parviennent-ils à accomplir leur fonction ? Comment sont-ils fabriqués ? Toutes ces questions normales chez un enfant sont restées dans ma façon d'être. Je suis resté curieux dans de multiples domaines, assoiffé de savoir. Dans cette quête de compréhension, j'ai cherché à reproduire ces objets et leurs fonctions techniques avec les éléments que je possédais : des Legos. Sans le savoir, j'ai procédé à une approche mélangeant conception et fabrication pour obtenir le résultat le plus fidèle possible. Par exemple, quand j'avais 8 ans, souhaitant jouer du ukulélé, j'ai essayé d'en construire un en Lego. L'instrument sonnait extrêmement mal mais remplissait sa fonction première, celle de produire des sons. Grâce à toutes ces expérimentations, un élément était clair : j'ai et je souhaite toujours exercer un métier où l'on peut concevoir, innover ou inventer. Ma préférence pour les systèmes mécaniques et les domaines scientifiques a orienté mon désir de création vers le secteur de la mécanique et de la mécatronique.",
+        "texte2":"Une partie de l'éducation inculquée par mes parents accordait une place importante dans le fait d'être utile, d'aider les autres par nos actions. Cette philosophie, je l'ai conservée, souhaitant l'intégrer dans l'exercice de mon futur travail. Ainsi je souhaite exercer un métier dont les répercussions et les fruits sont positifs pour le plus grand nombre. J'ai trouvé un métier répondant à ces attentes : Ingénieur en recherche et développement.",
+        "texte3":"Dans mon parcours scolaire, je me suis orienté dès le collège vers le domaine scientifique avec une affection particulière pour les mathématiques et la physique. Dans le même temps, dans l'intention de comprendre le fonctionnement d'Internet, j'ai appris à développer des sites web en autodidacte. Ce savoir m'a été utile car j'ai réalisé entièrement moi-même le site que vous lisez. Une fois au lycée, j'ai obtenu un bac général avec des spécialités scientifiques, choisies en prévision de mes études supérieures.<br>Mon goût pour les systèmes mécaniques m'a orienté vers le BUT Génie Mécanique et Productique à l'IUT de Cachan, dans le but d'intégrer ensuite une école d'ingénieur ou réaliser un master.",
+        "titre2":"Mon parcours scolaire et les événements associés",
+        "2025":"2025",
+        "c2025":"<li><b>Intégration de l'IUT de Cachan en formation BUT Génie Mécanique et Productique</b></li><li><b>Obtention d'un baccalauréat mention TB en filière générale</b> (17,6 de moyenne)<br><span>Spécialités Mathématiques, Physique-Chimie, Numériques et Sciences de l'informatique</span><br><span>Option Mathématiques Expertes et Langues et Cultures Anciennes</span></li>",
+        "2024":"2024",
+        "c2024":"<b>Participation au Concours Général d'Histoire</b><br>Épreuve réalisée durant ma classe de première</p>",
+        "2022":"2022",
+        "c2022":"<b>Intégration d'un lycée en filière générale</b>",
+        "2021":"2021",
+        "c2021":"<b>1er prix de l'Académie d'Amiens des Olympiades de Mathématiques</b><br>des élèves de 4ème"
+    },
+    "en":{
+        "titre_section":"Design Office",
+        "description":"The Design Office course introduces students to the use of SolidWorks software, the conventions and standards of technical drawing, the fundamental principles of design and the technical solutions commonly used in industry.",
+        "legende":"Vincent",
+        "titre":"Design Office No. 1 (BE1): Triplex Grooving Machine",
+        "texte1":"The first session of the design office course involved introducing students to and teaching them the basics of computer-aided design (CAD) software: <a href=“https://www.solidworks.com/en”>SolidWorks</a>. Our project focused on a groove-cutting machine of the sort available on the market. A grooving machine is mainly used to create the grooves required for fitting plastic components designed to protect the edges of a wall.<br>While working on this project, I discovered the features and capabilities of SolidWorks. I learnt how to convert a piece from a 2D drawing into a 3D model suitable for CAD. After modelling multiple parts, I was able to assemble the entire system I was designing within SolidWorks.",
+        "texte2":"Once these steps were complete, I had to set about creating technical drawings specifying the dimensions and specifications of each part I had modelled in the software. At the same time, I prepared the rendering documents for my assembly with a view to potentially submitting the design dossier to the production engineering department.<br>This first experience in the design office course enabled me to learn how to use SolidWorks and to familiarise myself with the standards of technical drawing. It was an enriching experience for me, allowing me to discover 3D modelling using SolidWorks.<br><br><a href='./BE2.html' class='suivi'>See my second design office&nbsp;</a>"
+    }
+}

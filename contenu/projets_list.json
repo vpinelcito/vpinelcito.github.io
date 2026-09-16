@@ -1,63 +1,78 @@
 {
     "articles":[
         {
-            "img":"",
+            "img":"../images/BE1.png",
+            "link":"./BE1.html",
+            "date":"22/05/2026",
             "fr":{
                 "titre":"Bureau d'études n°1 (BE1) : Rainureuse Triplex",
                 "tags":["Bureau d'études","1ère année"],
-                "date":"22/05/2026",
-                "description":""
+                "description":"Une introduction aux fondamentaux de Solidworks..."
             },
             "en":{
                 "titre":"Design Office No. 1 (BE1): Triplex Grooving Machine",
                 "tags":["Design Office","1st year"],
-                "date":"22/05/2026",
-                "description":""
+                "description":"An introduction to the basics of SolidWorks..."
             }
         },
         {
-            "img":"",
+            "img":"../images/BE2.png",
+            "link":"./BE2.html",
+            "date":"23/05/2026",
             "fr":{
                 "titre":"Bureau d'études n°2 (BE2) : Testeur d'ampoule halogène",
                 "tags":["Bureau d'études","1ère année"],
-                "date":"24/05/2026",
-                "description":""
+                "description":"Un premier véritable bureau d'études ?"
             },
             "en":{
                 "titre":"Design Office No. 2 (BE2): Halogen bulb tester",
                 "tags":["Design Office","1st year"],
-                "date":"22/05/2026",
-                "description":""
+                "description":"A proper design office for the first time?"
             }
         },
         {
-            "img":"",
+            "img":"../images/BE3_ecorche.jpg",
+            "link":"./BE3.html",
+            "date":"24/05/2026",
             "fr":{
                 "titre":"Bureau d'études n°3 (BE3) : Spin Coater",
                 "tags":["Bureau d'études","1ère année"],
-                "date":"24/05/2026",
-                "description":""
+                "description":"Un 3ème bureau d'études plus ambitieux que ces prédecesseurs..."
             },
             "en":{
                 "titre":"Design Office No. 3 (BE3): Spin Coater",
                 "tags":["Design Office","1st year"],
-                "date":"24/05/2026",
-                "description":""
+                "description":"A third design office, more ambitious than its predecessors..."
             }
         },
         {
-            "img":"",
+            "img":"../images/robot_qdp_reel.jpg",
+            "link":"./robot_qdp.html",
+            "date":"25/05/2026",
             "fr":{
                 "titre":"Robot quadrupède",
                 "tags":["Projet","1ère année"],
-                "date":"24/05/2026",
-                "description":""
+                "description":"Découvrez mon projet le plus complet, celui de mon second semestre : le robot quadrupède..."
             },
             "en":{
                 "titre":"Quadruped robot",
                 "tags":["Project","1st year"],
-                "date":"24/05/2026",
-                "description":""
+                "description":"Take a look at my most comprehensive project, the one I worked on during the second term: the quadruped robot..."
+            }
+        },
+        {
+            "img":"../images/leclair34.JPG",
+            "link":"./",
+            "date":"16/09/2026",
+            "fr":{
+                "titre":"Projet éclair",
+                "tags":["Projet","2ème année"],
+                "description":"Découvrez l'avancement du projet que je réalise durant ma seconde année d'IUT..."
+            },
+            "en":{
+                "titre":"Quadruped robot",
+                "tags":["Project","2nd year"],
+                "description":"Find out how the project I’m working on during my second year at the IUT is coming along..."
             }
         }
     ]

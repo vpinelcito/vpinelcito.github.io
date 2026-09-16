@@ -6,29 +6,24 @@
         <title>Portfolio Vincent</title>
         <link rel="icon" type="image/x-icon" href="../images/favicone_20x20.png?">
         <link rel="stylesheet" href="../css/style.css"/>
-		<link rel="stylesheet" href="../css/BE.css"/>
+		<link rel="stylesheet" href="../css/projets.css"/>
 		<script src="../script/main.js"></script>
     </head>
     <body>
         <section>
-			<div class="entete">
+            <div class="entete">
 				<div class="texte">
 					<span class="titre" id="titre_section"></span><br>
 					<span class="description" id="description"></span>
 				</div>
 			</div>
-            <article id="BE2">
-				<div class="illustration">
-					<img src="../images/BE2.jpg" />
-					<p class="legende" id="legende"></p>
-				</div>
-				<h2 id="titre"></h2>
-				<div id="infos"></div>
-				<div class="texte" id="texte1"></div>
-				<div class="texte" id="texte2"></div>
-			</article>
+            <article>
+                <table>
+                    <tbody id="affichage_article"></tbody>
+                </table>
+            </article>
         </section>
         <script src="../script/dynamique.js"></script>
-		<script defer>info_article()</script>
+        <script defer>insertion_articles()</script>
     </body>
 </html>
