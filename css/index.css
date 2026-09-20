@@ -44,25 +44,6 @@ img{
     font-size: 24px;
 }
 
-/*img:hover+.texte_conteneur{
-    background-color: rgb(214, 219, 225);
-}
-.texte_conteneur:hover{
-    background-color: rgb(214, 219, 225);
-}
-img+.texte_conteneur:hover{
-    background-color: rgb(214, 219, 225);
-}*/
-
-/*.contact{
-    width: 98%;
-    position: absolute;
-    bottom: 0px;
-}*/
-/*body{
-    overflow-y: scroll;
-}*/
-
 section .titre{
     width: 45%;
     height: auto;
@@ -107,5 +88,49 @@ body .entete{
         padding-left: 20px;
         padding-right: 20px;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    article{
+        grid-template-columns: 100%;
+    }
+    .apm{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    img.apm{
+        grid-row: 2;
+    }
+    .prj{
+        grid-column: 1;
+        grid-row: 5;
+    }
+    img.prj{
+        grid-row: 4;
+    }
+    .exp{
+        grid-column: 1;
+        grid-row: 7;
+    }
+    img.exp{
+        grid-row: 6;
+    }
+    img.gauche{
+        grid-column: 1;
+        width: 60%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img.droite{
+        grid-column: 1;
+        width: 60%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .texte_conteneur{
+        padding-bottom: 20px;
     }
 }

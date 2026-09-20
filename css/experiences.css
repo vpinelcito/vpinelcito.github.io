@@ -58,8 +58,12 @@ article h2{
 @media screen and (max-width: 768px){
     .entete{
         background-image: url(../images/fond_ephad_telephone.jpg);
-        background-size: 100%;
-        background-position: top -50px left;
+        background-position: center;
+    }
+
+    #professionnelles{
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     #associatives{
@@ -71,16 +75,20 @@ article h2{
     #associatives h2{
         grid-column: 1;
         grid-row: 1;
+        padding-left: 1em;
+        padding-right: 1em;
     }
     #associatives #texte1{
         grid-column: 1;
         grid-row: 2;
-        padding-right: 0px;
+        padding-right: 1em;
+        padding-left: 1em;
     }
     #associatives #texte2{
         grid-column: 1;
         grid-row: 5;
-        padding-right: 0px;
+        padding-right: 1em;
+        padding-left: 1em;
     }
 
     #associatives img{

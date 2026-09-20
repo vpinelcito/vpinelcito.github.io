@@ -108,9 +108,6 @@ article ul{
         background-image: url("../images/generique_opaque_ok3_tel.jpg");
         background-position: top 0px left;
     }
-    section article:first-of-type:not(.intro){
-        margin-top: 85%;
-    }
     .tableau{
         display: grid;
         grid-template-columns: 100%;
@@ -153,6 +150,7 @@ article ul{
     #cao{
         grid-column: 1;
         grid-row: 6;
+        padding-right: 1em;
     }
     .jet_deau{
         grid-column: 1;
@@ -161,6 +159,7 @@ article ul{
     #prod{
         grid-column: 1;
         grid-row: 8;
+        padding-right: 1em;
     }
     #assemblage{
         grid-column: 1;

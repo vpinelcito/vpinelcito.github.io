@@ -57,12 +57,12 @@ article>table{
         height: 70%;
         margin-right: 20px;
     }
-    .article>div{
+    /*.article>div{
         width: 60%;
-    }
+    }*/
     .entete{
         background-size: 180%;
-        background-position: top 50% left 50%;
+        background-position: center;
     }
 }
 

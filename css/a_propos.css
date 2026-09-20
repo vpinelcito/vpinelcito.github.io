@@ -49,94 +49,78 @@
     padding-bottom: 20px;
 }
 
-#parcours{
-    width: 100%;
-    height: auto;
-    padding-top: 60px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-.frise{
-    height: auto;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-#parcours h2{
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-bottom: 20px;
-}
-.evenement{
-    display: grid;
-    grid-template-columns: 15% 5% 10% 70%;
-    grid-auto-rows: minmax(100px, auto);
-    padding-top: 5px;
-    padding-bottom: 20px;
-}
-.evenement .date{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-column: 2;
-    font-size: 24px;
-    color: white;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(122, 35, 67);
-    z-index: 2;
-    font-weight: bold;
-}
-.evenement .date>p{
-    position: relative;
-    z-index: 3;
-}
-/*.evenement .dessous::before{
-    content: "";
-    position: absolute;
-    width: 3px;
-    height: 80px;
-    background-color: rgb(122, 35, 67);
-    margin-left: 0px;
-    margin-top: 150px;
-}
-.evenement .date::after{
-    content: "";
-    position: absolute;
-    width: 146px;
-    height: 3px;
-    background-color: rgb(122, 35, 67);
-    margin-left: 215px;
-}*/
-
-.evenement .contenu{
-    grid-column: 4;
-    text-align: justify;
-    padding-left: 30px;
-    margin-right: 50px;
-    border-radius: 15px;
-    border-left: 3px solid rgb(122, 35, 67);
-    border-right: 3px solid rgb(122, 35, 67);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    align-items: center;
-    margin-right: 20px;
-    font-size: 18px;
-    position: relative;
-    width: 735px;
-}
-.evenement .contenu>p{
-    position: absolute;
-    top: 50%;
-    transform: translate(0px, -50%);
-}
-.evenement .contenu span{
-    padding-left: 20px;
-    font-style: italic;
+@media screen and (min-width: 769px){
+    #parcours{
+        height: auto;
+        padding-top: 60px;
+    }
+    .frise{
+        height: auto;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #parcours h2{
+        padding-bottom: 20px;
+    }
+    .evenement{
+        display: grid;
+        grid-template-columns: 5% 10% 85%;
+        grid-auto-rows: minmax(100px, auto);
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
+    .evenement .date{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: 1;
+        font-size: 24px;
+        color: white;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(122, 35, 67);
+        z-index: 2;
+        font-weight: bold;
+    }
+    .evenement .date>p{
+        position: relative;
+        z-index: 3;
+    }
+    .evenement .contenu{
+        grid-column: 3;
+        text-align: justify;
+        padding-left: 30px;
+        margin-right: 50px;
+        border-radius: 15px;
+        border-left: 3px solid rgb(122, 35, 67);
+        border-right: 3px solid rgb(122, 35, 67);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: center;
+        margin-right: 20px;
+        font-size: 18px;
+        position: relative;
+        width: 91%;
+        padding-right: 30px;
+    }
+    .evenement .contenu>p{
+        position: absolute;
+        top: 50%;
+        transform: translate(0px, -50%);
+    }
+    .evenement .contenu span{
+        padding-left: 20px;
+        font-style: italic;
+    }
 }
 
 @media (max-width: 768px) {
+    article{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
     .entete{
         background-image: url("../images/fond_a_propos2_telephone.jpg");
         background-position: top -50px left;
@@ -172,5 +156,25 @@
     #presentation p:last-child{
         grid-column: 1;
         grid-row: 5;
+    }
+
+    #parcours{
+        padding-top: 40px;
+    }
+    .frise{
+        margin-top: 20px;
+    }
+    .evenement{
+        display: grid;
+        grid-template-columns: 10% 90%;
+    }
+    .evenement .date{
+        grid-column: 1;
+        font-size: 16px;
+    }
+    .evenement .contenu{
+        padding-left: 1em;
+        grid-column: 2;
+        list-style: none;
     }
 }

@@ -278,6 +278,11 @@ section a:not(.remonte){
     font-size: 12px;
 }
 
+a.suivi_back::before{
+    content:"◄";
+    font-size: 12px;
+}
+
 a.suivi::after{
     content:"►";
     font-size: 12px;
@@ -303,7 +308,7 @@ a.suivi::after{
 #cookie{
     background-color: rgb(137, 150, 167);
     width: 68%;
-    height: 30%;
+    height: auto;
     position: fixed;
     top: 50%;
     text-align: center;
@@ -314,7 +319,7 @@ a.suivi::after{
     display: grid;
     grid-template-columns: 10% 80% 10%;
 }
-#cookie p{
+#cookie #texte_cookie{
     grid-column: 1/4;
     grid-row: 2;
     padding: 10px;
@@ -331,7 +336,7 @@ a.suivi::after{
     height: 20px;
     width: 20px;
 }
-#cookie .le_cookie{
+#cookie #le_cookie{
     grid-column: 2;
     grid-row: 1;
     margin-right: auto;
@@ -401,6 +406,12 @@ a.suivi::after{
 }
 
 @media (max-width: 768px) {
+    .entete{
+        background-size: auto 100%;
+	    background-repeat: no-repeat;
+        background-position: center;
+    }
+
     nav{
         display: grid;
         grid-template-columns: 75% 25%;
