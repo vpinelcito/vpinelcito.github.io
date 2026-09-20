@@ -10,8 +10,8 @@
                 "description":"Une introduction aux fondamentaux de Solidworks..."
             },
             "en":{
-                "titre":"Design Office No. 1 (BE1): Triplex Grooving Machine",
-                "tags":["Design Office","1st year"],
+                "titre":"Mechanical engineering design No. 1 (BE1): Triplex Grooving Machine",
+                "tags":["Mechanical engineering design","1st year"],
                 "description":"An introduction to the basics of SolidWorks..."
             }
         },
@@ -25,9 +25,9 @@
                 "description":"Un premier véritable bureau d'études ?"
             },
             "en":{
-                "titre":"Design Office No. 2 (BE2): Halogen bulb tester",
-                "tags":["Design Office","1st year"],
-                "description":"A proper design office for the first time?"
+                "titre":"Mechanical engineering design No. 2 (BE2): Halogen bulb tester",
+                "tags":["Mechanical engineering design","1st year"],
+                "description":"A proper mechanical engineering design for the first time?"
             }
         },
         {
@@ -40,9 +40,9 @@
                 "description":"Un 3ème bureau d'études plus ambitieux que ces prédecesseurs..."
             },
             "en":{
-                "titre":"Design Office No. 3 (BE3): Spin Coater",
-                "tags":["Design Office","1st year"],
-                "description":"A third design office, more ambitious than its predecessors..."
+                "titre":"Mechanical engineering design No. 3 (BE3): Spin Coater",
+                "tags":["Mechanical engineering design","1st year"],
+                "description":"A third mechanical engineering design, more ambitious than its predecessors..."
             }
         },
         {
@@ -62,7 +62,7 @@
         },
         {
             "img":"../images/leclair34.JPG",
-            "link":"./",
+            "link":"./projet_eclair1.html",
             "date":"16/09/2026",
             "fr":{
                 "titre":"Projet éclair",
@@ -70,7 +70,7 @@
                 "description":"Découvrez l'avancement du projet que je réalise durant ma seconde année d'IUT..."
             },
             "en":{
-                "titre":"Quadruped robot",
+                "titre":"Lightning project",
                 "tags":["Project","2nd year"],
                 "description":"Find out how the project I’m working on during my second year at the IUT is coming along..."
             }

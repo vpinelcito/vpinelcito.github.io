@@ -10,13 +10,15 @@
         "texte3":"Dans mon parcours scolaire, je me suis orienté dès le collège vers le domaine scientifique avec une affection particulière pour les mathématiques et la physique. Dans le même temps, dans l'intention de comprendre le fonctionnement d'Internet, j'ai appris à développer des sites web en autodidacte. Ce savoir m'a été utile car j'ai réalisé entièrement moi-même le site que vous lisez. Une fois au lycée, j'ai obtenu un bac général avec des spécialités scientifiques, choisies en prévision de mes études supérieures.<br>Mon goût pour les systèmes mécaniques m'a orienté vers le BUT Génie Mécanique et Productique à l'IUT de Cachan, dans le but d'intégrer ensuite une école d'ingénieur ou réaliser un master.",
         "titre2":"Mon parcours scolaire et les événements associés",
         "2025":"2025",
-        "c2025":"<li><b>Intégration de l'IUT de Cachan en formation BUT Génie Mécanique et Productique</b></li><li><b>Obtention d'un baccalauréat mention TB en filière générale</b> (17,6 de moyenne)<br><span>Spécialités Mathématiques, Physique-Chimie, Numériques et Sciences de l'informatique</span><br><span>Option Mathématiques Expertes et Langues et Cultures Anciennes</span></li>",
+        "c2025":"<li>Intégration de l'IUT de Cachan en formation <b>BUT Génie Mécanique et Productique</b></li><li><b>Obtention d'un baccalauréat mention TB en filière générale</b> (17,6 de moyenne)<br><span>Spécialités Mathématiques, Physique-Chimie, Numériques et Sciences de l'informatique</span><br><span>Option Mathématiques Expertes et Langues et Cultures Anciennes</span></li>",
         "2024":"2024",
         "c2024":"<b>Participation au Concours Général d'Histoire</b><br>Épreuve réalisée durant ma classe de première",
         "2022":"2022",
         "c2022":"<b>Intégration d'un lycée en filière générale</b>",
         "2021":"2021",
-        "c2021":"<b>1er prix de l'Académie d'Amiens des Olympiades de Mathématiques</b><br>des élèves de 4ème"
+        "c2021":"<b>1er prix de l'Académie d'Amiens des Olympiades de Mathématiques</b><br>des élèves de 4ème",
+        "2026":"2026",
+        "c2026":"<b>Première année en BUT Génie Mécanique et Productique</b> (1er sur 130 élèves)"
     },
     "en":{
         "titre_section":"About Vincent PINEL-CITOLLEUX",
@@ -29,12 +31,14 @@
         "texte3":"Throughout my school career, I focused on science from secondary school onwards, with a particular interest in mathematics and physics. At the same time, keen to understand how the internet works, I taught myself how to develop websites. This knowledge has proved useful, as I built the website you are currently viewing entirely by myself. Once at sixth form, I obtained a general A-level qualification with a focus on science subjects, chosen with a view to my higher education.<br>My interest in mechanical systems led me to enrol on the BUT (University Technical Diploma) in Mechanical and Production Engineering at the IUT in Cachan, with the aim of subsequently joining an engineering school or undertaking a Master’s degree.",
         "titre2":"My educational background and related events",
         "2025":"2025",
-        "c2025":"<li><b>Admission to the Cachan University Institute of Technology (IUT) for the BUT in Mechanical and Production Engineering</b></li><li><b>Awarded a baccalaureate with ‘TB’ distinction in the general stream</b> (average mark: 17.6)<br><span>Specialisms: Mathematics, Physics and Chemistry, Computational Sciences and Computer Science</span><br><span>Advanced Mathematics and Ancient Languages and Cultures</span></li>",
+        "c2025":"<li>Admission to the Cachan University Institute of Technology (IUT) for the <b>Bachelor university and technical in Mechanical and Production Engineering</b></li><li><b>Awarded a baccalaureate with high honors distinction in the general stream</b> (average mark: 17.6)<br><span>Specialisms: Mathematics, Physics and Chemistry, Computational Sciences and Computer Science</span><br><span>Advanced Mathematics and Ancient Languages and Cultures</span></li>",
         "2024":"2024",
-        "c2024":"<b>Entry for the Concours Général d'Histoire</b><br>Exam taken whilst I was in the première year",
+        "c2024":"<b>Entry for the Concours Général d'Histoire</b><br>Exam taken whilst I was in the Year 12",
         "2022":"2022",
         "c2022":"<b>Enrolment at a sixth-form college offering the general stream</b>",
         "2021":"2021",
-        "c2021":"<b>First prize from the Amiens Academy at the Mathematics Olympiad</b><br>for Year 8 pupils"
+        "c2021":"<b>First prize from the Amiens Academy at the Mathematics Olympiad</b><br>for Year 8",
+        "2026":"2026",
+        "c2026":"<b>Première année en BUT Génie Mécanique et Productique</b> (1er sur 130 élèves)"
     }
 }

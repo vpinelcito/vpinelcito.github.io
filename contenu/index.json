@@ -5,9 +5,9 @@
         "lien1":"Voir plus&nbsp;",
         "lien2":"Voir plus&nbsp;",
         "apm_titre":"A propos de moi",
-        "apm_contenu":"Découvrez pour quelles raisons je me suis orienté dans le domaine de la mécanique... Mes compétences, mon parcours scolaires ainsi que mes centres d'intêrets.",
+        "apm_contenu":"Découvrez pour quelles raisons je me suis orienté dans le domaine de la mécanique... Mes compétences, mon parcours scolaire ainsi que mes centres d'intérets.",
         "prj_titre":"Projets",
-        "prj_contenu":"Découvrez les différents projets que j'ai réalisé durant mes études supérieures et pas que...<br>De mes premières réalisations en bureau d'études à la fabrication d'une voiture propulsé par une hélice."
+        "prj_contenu":"Découvrez les différents projets que j'ai réalisés, durant mes études supérieures et ailleurs...<br>De mes premières réalisations en bureau d'études à la fabrication d'une voiture propulsée par une hélice."
     },
     "en":{
         "titre":"Digital portfolio of Vincent Pinel-Citolleux",
@@ -17,6 +17,6 @@
         "apm_titre":"About me",
         "apm_contenu":"Find out why I chose to go into the field of mechanics... My skills, my educational background and my interests.",
         "prj_titre":"Projects",
-        "prj_contenu":"Discover the various projects I’ve worked on during my higher education – and beyond…<br>From my early projects at a design consultancy to building a car powered by a propeller."
+        "prj_contenu":"Discover the various projects I’ve worked on during my higher education and beyond…<br>From my early projects at a design consultancy to building a car powered by a propeller."
     }
 }
