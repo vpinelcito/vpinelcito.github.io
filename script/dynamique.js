@@ -8,9 +8,9 @@ body.addEventListener("click", (evenement) => {
         window.location.reload();
     }else if(evenement.target && evenement.target.id === "deploye"){
         document.getElementById(evenement.target.id).classList.toggle("fermeture");
-    }else if(evenement.target && evenement.target.id === "cookie"){
+    }else if(evenement.target && (evenement.target.id === "le_cookie" || evenement.target.id === "fermeture_cookie" || evenement.target.id === "texte_cookie" || evenement.target.id === "img_cookie" || evenement.target.id === "cookie")){
         document.getElementById("cookie").style.display = "none";
     }else if(evenement.target && evenement.target.id === "site_iut"){
-        document.location.href = "https://www.iut-cachan.universite-paris-saclay.fr/";
+        window.open("https://www.iut-cachan.universite-paris-saclay.fr/", "_blank");
     }
 });

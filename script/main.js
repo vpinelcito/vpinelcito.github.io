@@ -1,55 +1,5 @@
-/**
- * Haut
-<div id="haut"></div>
-<header>
-    <nav>
-        <div class="changement_langue">
-            <span id="FR">FR</span>|<span id="EN">EN</span>
-        </div>
-        <label for="menu" id="deploye"></label>
-        <input type="checkbox" id="menu" role="button">
-        <ul class="list_menu">
-            <li><label><a href="../pages/index.html">Accueil</a></label></li>
-            <li class="deroulant">
-                <label for="propos"><a>À&nbsp;propos&nbsp;</a></label>
-                <input type="checkbox" id="propos" role="button">
-                <ul class="sous">
-                    <li><a href="../pages/a_propos.html">Présentation</a></li>
-                    <li><a href="../pages/competences.html">Compétences</a></li>
-                    <li><a href="../pages/centres_interieur.html">Centre d'intêret</a></li>
-                </ul>
-            </li>
-            <li><label><a href="../pages/projets.html">Projets</a></label></li>
-            <li class="deroulant">
-                <label for="experiences"><a>Expériences&nbsp;</a></label>
-                <input type="checkbox" id="experiences" role="button">
-                <ul class="sous">
-                    <li><a href="../pages/experiences.html#professionelles">Professionelle</a></li>
-                    <li><a href="../pages/experiences.html#associatives">Associative</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <script>
-        const deploye = document.getElementById("deploye");
-        deploye.addEventListener("click", () => {
-            deploye.classList.toggle("fermeture");
-        });
-        document.getElementById("FR").addEventListener("click", () => {
-            document.cookie ="langue=FR; path=/; max-age=604800000; samesite=strict; secure" //domain=vpinelcito.github.io
-            window.location.reload();
-        });
-        document.getElementById("EN").addEventListener("click", () => {
-            document.cookie ="langue=EN; path=/; max-age=604800000; samesite=strict; secure" //domain=vpinelcito.github.io
-            window.location.reload();
-        });
-    </script>
-</header>
-
-<div id="haut"></div><header><nav><div class="changement_langue"><span id="FR">FR</span>|<span id="EN">EN</span></div><label for="menu" id="deploye"></label><input type="checkbox" id="menu" role="button"><ul class="list_menu"><li><label><a href="../pages/index.html">Accueil</a></label></li><li class="deroulant"><label for="propos"><a>À&nbsp;propos&nbsp;</a></label><input type="checkbox" id="propos" role="button"><ul class="sous"><li><a href="../pages/a_propos.html">Présentation</a></li><li><a href="../pages/competences.html">Compétences</a></li><li><a href="../pages/centres_interieur.html">Centre d'intêret</a></li></ul></li><li><label><a href="../pages/projets.html">Projets</a></label></li><li class="deroulant"><label for="experiences"><a>Expériences&nbsp;</a></label><input type="checkbox" id="experiences" role="button"><ul class="sous"><li><a href="../pages/experiences.html#professionelles">Professionelle</a></li><li><a href="../pages/experiences.html#associatives">Associative</a></li></ul></li></ul></nav><script>const deploye = document.getElementById("deploye");deploye.addEventListener("click", () => {deploye.classList.toggle("fermeture");});document.getElementById("FR").addEventListener("click", () => {document.cookie ="langue=FR; path=/; domain=vpinelcito.github.io; max-age=604800000; samesite=strict; secure";window.location.reload();});document.getElementById("EN").addEventListener("click", () => {document.cookie ="langue=EN; path=/; domain=vpinelcito.github.io; max-age=604800000; samesite=strict; secure";window.location.reload();});</script></header>
-
-<script>const deploye = document.getElementById("deploye");deploye.addEventListener("click", () => {deploye.classList.toggle("fermeture");});document.getElementById("FR").addEventListener("click", () => {document.cookie ="langue=FR; path=/; domain=vpinelcito.github.io; max-age=604800000; samesite=strict; secure";window.location.reload();});document.getElementById("EN").addEventListener("click", () => {document.cookie ="langue=EN; path=/; domain=vpinelcito.github.io; max-age=604800000; samesite=strict; secure";window.location.reload();});</script>
-*/
+//<li><a href='../pages/competences.html'>Compétences</a></li><li><a href='../pages/centres_interet.html'>Centres d'intêret</a></li>
+//<li><a href='../pages/competences.html'>Skills</a></li><li><a href='../pages/centres_interet.html'>Interest</a></li>
 
 let langue = "en";
 const nom = "langue"
@@ -152,6 +102,7 @@ async function info_article() {
 }
 
 //Faire liste article
+lien_texte={fr:"Voir",en:"Read"}
 async function insertion_articles() {
     if(recu == "") await charger_langue();
     await charger_articles();
@@ -180,7 +131,7 @@ async function insertion_articles() {
         element_article[4].forEach(tag => {
             contenu_tableau += `<span class='tag'>${tag}</span>&nbsp;`;
         });
-        contenu_tableau += `<br>${element_article[2]}<br><a class="suivi" href="${element_article[5]}">Voir&nbsp;</a></p></div></td>`
+        contenu_tableau += `<br>${element_article[2]}<br><a class="suivi" href="${element_article[5]}">${lien_texte[langue]}&nbsp;</a></p></div></td>`
         if (i%3==2) {
             contenu_tableau += "</tr>";
         }
