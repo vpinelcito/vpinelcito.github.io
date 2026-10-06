@@ -1,0 +1,23 @@
+{
+  "short_name": "Vrévision",
+  "name": "Application de questionnaire du V",
+  "description": "Accéder à des questionnaires inédits réalisé par une équipe expérimentés...",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#7a8695",
+  "theme_color": "white",
+  "display": "standalone",
+  "orientation": "portrait"
+}
