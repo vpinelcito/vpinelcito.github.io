@@ -47,18 +47,26 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const requestUrl = event.request.url;
 
-  // Ignorer les requêtes vers Google Apps Script (sauvegarde des stats)
   if (requestUrl.includes('://://google.com')) {
     return;
   }
 
+  // STRATÉGIE CORRIGÉE : Cache-First avec option "ignoreSearch"
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
+    // ignoreSearch: true permet de faire correspondre "qcm.html?q=..." avec "qcm.html" qui est en cache
+    caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
-      return fetch(event.request).catch(() => {
-        console.warn(`[Service Worker] Ressource introuvable hors ligne : ${requestUrl}`);
+
+      // Si la ressource n'est vraiment pas dans le cache, on tente le réseau
+      return fetch(event.request).catch((err) => {
+        console.warn(`[Service Worker] Réseau indisponible et ressource introuvable en cache : ${requestUrl}`);
+        // CORRECTION SAFARI : Ne jamais retourner "null" directement dans respondWith, on laisse l'erreur remonter proprement ou on génère une réponse vide valide
+        return new Response('Connexion internet requise pour cette ressource.', {
+          status: 503,
+          statusText: 'Service Unavailable'
+        });
       });
     })
   );
