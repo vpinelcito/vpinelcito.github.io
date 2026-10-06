@@ -1,0 +1,31 @@
+*{
+    font-family: Avenir, sans-serif;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0px;
+}
+
+input[type=checkbox]:not(.choix){
+    display: none;
+}
+
+input[type=checkbox]:checked + ul{
+    display: flex;
+    flex-flow : column wrap;
+}
+
+ul li{
+    flex: 1 1 auto;
+    width: 100%;
+    text-align: left;
+}
+
+ul ul{
+        display: none;/* flex */
+        flex-flow: column wrap;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 20px;
+    }

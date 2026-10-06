@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicone_20x20.png?">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./qcm.css"/>
+    <script src="./dexie.js"></script>
+    <script src="./qcm.js" defer></script>
+    <title>QCM</title>
+</head>
+<body>
+    <section id="conteneur">
+        <div id="quit"><i>Quitter la session</i></div>
+        <h2>Questionnaire</h2>
+        <div id="avance"></div>
+        <div id="categorie"></div>
+        <div class="contenu">
+            <div class="texte" id="question"></div>
+            <div class="img" id="image_question"></div>
+            <div class="texte" id="complement_question"></div>
+            <div class="texte" id="reponse"></div>
+            <div class="img" id="image_reponse"></div>
+            <div class="texte" id="complement_reponse"></div>
+        </div>
+        <div class="texte" id="choix_reponse">
+            <div id="parfait"></div>
+            <div id="bon"></div>
+            <div id="moyen"></div>
+            <div id="mauvais"></div>
+            <!--<div id="parfait box_reponse"><div>OK +</div></div>
+            <div id="bon box_reponse"><div>OK</div></div>
+            <div id="moyen box_reponse"><div>Bof</div></div>
+            <div id="mauvais box_reponse"><div>Bof -</div></div>-->
+        </div>
+    </section>
+</body>
+</html>
