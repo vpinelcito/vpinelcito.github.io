@@ -1,22 +1,25 @@
-const CACHE_NAME = 'qcm-app-shell-v0.8'; // Important à chaque màj changer d'une version
+const CACHE_NAME = 'qcm-app-shell-v0.9'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
 
-//fichiers téléchargé
+// Liste corrigée avec les bons fichiers CSS et JS présents dans ton dépôt
 const ASSETS_TO_CACHE = [
-  '/qcm-revision/',
-  '/qcm-revision/index.html',
-  '/qcm-revision/qcm.html',
-  '/qcm-revision/main.js',
-  '/qcm-revision/qcm.js',
-  '/qcm-revision/dexie.js',
-  '/qcm-revision/style.css',
-  '/qcm-revision/manifest.json',
-  '/qcm-revision/icon-192.png',
-  '/qcm-revision/icon-512.png'
+  './',
+  './index.html',
+  './qcm.html',
+  './main.js',
+  './qcm.js',
+  './dexie.js',
+  './style.css',
+  './qcm.css',
+  './manifest.json',
+  './favicone_20x20.png',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
+      // Utilisation de Promise.allSettled pour éviter qu'un seul fichier manquant bloque tout
       Promise.allSettled(ASSETS_TO_CACHE.map((url) => cache.add(url)))
     ).then(() => self.skipWaiting())
   );
@@ -28,7 +31,6 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
-          // Suppression complète de tous les anciens conteneurs pour éviter de saturer la mémoire du téléphone
           if (cache !== CACHE_NAME) {
             console.log('[Service Worker] Nettoyage de l\'ancien cache d\'interface :', cache);
             return caches.delete(cache);
@@ -36,7 +38,6 @@ self.addEventListener('activate', (event) => {
         })
       );
     }).then(() => {
-      // Prend le contrôle immédiat de la page en cours sans rechargement nécessaire
       return self.clients.claim();
     })
   );
@@ -46,19 +47,16 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const requestUrl = event.request.url;
 
-  if (requestUrl.includes('://script.google.com')) {
+  // Ignorer les requêtes vers Google Apps Script (sauvegarde des stats)
+  if (requestUrl.includes('://://google.com')) {
     return;
   }
 
-  // RÈGLE B : Stratégie standard pour l'App Shell (HTML, CSS, JS) -> Cache-First, repli réseau
-  // Comme les images sont en Base64 à l'intérieur du JSON, elles passent par Dexie et non par ici
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
-
-      // Si le fichier n'est pas dans l'App Shell, on tente de le chercher sur internet
       return fetch(event.request).catch(() => {
         console.warn(`[Service Worker] Ressource introuvable hors ligne : ${requestUrl}`);
       });
