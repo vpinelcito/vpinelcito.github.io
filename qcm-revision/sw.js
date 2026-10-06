@@ -1,21 +1,19 @@
-// 1. CONFIGURATION DU CACHE GLOBAL DE L'INTERFACE (L'App Shell)
-const CACHE_NAME = 'qcm-app-shell-v0.6'; // Important à chaque màj changer d'une version
+const CACHE_NAME = 'qcm-app-shell-v0.8'; // Important à chaque màj changer d'une version
 
-// Liste des fichiers statiques locaux indispensables au fonctionnement de l'application
+//fichiers téléchargé
 const ASSETS_TO_CACHE = [
-  './',
-  './index.html',
-  './qcm.html',
-  './main.js',
-  './qcm.js',
-  './dexie.js',
-  './style.css',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  '/qcm-revision/',
+  '/qcm-revision/index.html',
+  '/qcm-revision/qcm.html',
+  '/qcm-revision/main.js',
+  '/qcm-revision/qcm.js',
+  '/qcm-revision/dexie.js',
+  '/qcm-revision/style.css',
+  '/qcm-revision/manifest.json',
+  '/qcm-revision/icon-192.png',
+  '/qcm-revision/icon-512.png'
 ];
 
-// 2. ÉVÉNEMENT 'INSTALL' : Téléchargement et stockage de l'App Shell
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
