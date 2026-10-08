@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qcm-app-shell-v0.10'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
+const CACHE_NAME = 'qcm-app-shell-v1'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
 
 // Liste corrigée avec les bons fichiers CSS et JS présents dans ton dépôt
 const ASSETS_TO_CACHE = [
@@ -61,6 +61,7 @@ self.addEventListener('fetch', (event) => {
 
       // Si la ressource n'est vraiment pas dans le cache, on tente le réseau
       return fetch(event.request).catch((err) => {
+        console.log(err)
         console.warn(`[Service Worker] Réseau indisponible et ressource introuvable en cache : ${requestUrl}`);
         // CORRECTION SAFARI : Ne jamais retourner "null" directement dans respondWith, on laisse l'erreur remonter proprement ou on génère une réponse vide valide
         return new Response('Connexion internet requise pour cette ressource.', {
