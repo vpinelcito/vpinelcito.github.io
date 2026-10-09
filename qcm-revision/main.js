@@ -211,8 +211,21 @@ window.addEventListener('offline', charger_menu);
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('[PWA] Service Worker enregistré avec succès ! Scope :', reg.scope))
-            .catch(err => console.error('[PWA] Échec de l\'enregistrement du Service Worker :', err));
+        navigator.serviceWorker.register('./sw.js?t=' + Date.now())
+            .then(reg => {
+                console.log('[PWA] Service Worker enregistré avec succès !');
+                reg.onupdatefound = () => {
+                    const newWorker = reg.installing;
+                    if (newWorker) {
+                        newWorker.onstatechange = () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('Nouvelle version détectée ! Application des mises à jour...');
+                                window.location.reload();
+                            }
+                        };
+                    }
+                };
+            })
+            .catch(err => console.error('[PWA] Échec de l\'enregistrement :', err));
     });
 }
