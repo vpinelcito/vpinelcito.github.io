@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qcm-app-shell-v1.11'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
+const CACHE_NAME = 'qcm-app-shell-v1.1'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
 
 // Liste corrigée avec les bons fichiers CSS et JS présents dans ton dépôt
 const ASSETS_TO_CACHE = [
