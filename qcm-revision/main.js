@@ -8,30 +8,51 @@ db.version(3).stores({
 
 const API_URL = "https://script.google.com/macros/s/AKfycbyjEKyrWst5D_Cu_qyYLm0LE_orhk7Ng0S9-_rz6bI4vwJ2vftxFWS2-5IbnW6SWUjh/exec";
 let all;
+let chargement = false;
 async function charger_menu() {
-    try {
-        afficher_bouton_utilisateur();
-        //ligne ?=> maj bdd
-        if (navigator.onLine) {
-            const reponse = await fetch(API_URL);
-            if (!reponse.ok) throw new Error(`Erreur HTTP ! Statut : ${reponse.status}`);
-            all = await reponse.json();
-            await db.configuration.put({ cle: "donnes", donnees: all });
-            mettre_a_jour_statut("Donnés synchronisés pour le mode hors ligne !");
-        } else {//sinon memoire
-            const cacheLocal = await db.configuration.get("donnes");
-            if (cacheLocal) {
-                all = cacheLocal.donnees;
-                mettre_a_jour_statut("Mode hors ligne actif.");
-            } else {
-                mettre_a_jour_statut("Attention : Aucune donnée locale trouvée. Connectez-vous à Internet.");
-                return;
-            }
+    afficher_bouton_utilisateur();
+    const cacheLocal = await db.configuration.get("donnes");
+    if (cacheLocal) {
+        all = cacheLocal.donnees;
+        mettre_a_jour_statut("Données stockées sur l'appareil utilsées");
+    } else {
+        mettre_a_jour_statut("Attention : Aucune donnée locale trouvée. Connectez-vous à Internet et appuyez sur le bouton de mise à jour");
+        return;
+    }
+    traiter_donnes(all);
+}
+
+async function charger_donnes() {
+    let tentatives = 3;
+    let delai = 1000;
+    let reponse;
+    mettre_a_jour_statut("Vérification de la connexion et synchronisation...");
+    for (let i = 0; i < tentatives; i++) {
+        try {
+            reponse = await fetch(API_URL);
+            if (!reponse.ok) throw new Error(`Statut HTTP : ${reponse.status}`);
+            break; 
+        } catch (erreur) {
+            console.warn(`Tentative ${i + 1} échouée (${erreur.message})...`);
+            if (i === tentatives - 1) throw erreur;
+            await new Promise(resolve => setTimeout(resolve, delai));
+            delai *= 1.5;
         }
-        traiter_donnes(all);
+    }
+    try {
+        let paquet = await reponse.json();
+        const donneesPropres = JSON.parse(JSON.stringify(paquet));
+        await db.transaction('rw', db.configuration, async () => {
+            await db.configuration.put({ cle: "donnes", donnees: donneesPropres });
+        });
+        all = donneesPropres; 
+        mettre_a_jour_statut("Données synchronisées pour le mode hors ligne !");
+        chargement = false;
+        traiter_donnes(donneesPropres);
     } catch (erreur) {
-        console.error("Erreur de chargement :", erreur);
-        mettre_a_jour_statut("Erreur lors du chargement.");
+        console.error("Erreur critique de stockage Dexie :", erreur);
+        mettre_a_jour_statut("Erreur lors du traitement des données.");
+        chargement = false;
         const cacheLocal = await db.configuration.get("donnes");
         if (cacheLocal) {
             all = cacheLocal.donnees;
@@ -79,7 +100,7 @@ function creation_choix(objet, boite, path_actuel = "") {
         //li
         const li = document.createElement("li");
         const label = document.createElement("label");
-        label.textContent = "&nbsp;"+key;
+        label.innerHTML = "&nbsp;"+key;
         const input = document.createElement("input");
         input.setAttribute("type", "checkbox");
         input.setAttribute("role", "button");
@@ -127,9 +148,16 @@ function choix_qcm() {
 
 //Lancement partie
 const body = document.querySelector("body");
-body.addEventListener("click", (evenement) => {
+body.addEventListener("click", async (evenement) => {
     if (evenement.target && evenement.target.id === "session") {
         choix_qcm()
+    }
+    if(evenement.target && evenement.target.id==="charger_donnes"){
+        if (!chargement){
+            mettre_a_jour_statut("Vérification de la connexion et synchronisation...")
+            chargement=true
+            await charger_donnes();
+        }
     }
 });
 

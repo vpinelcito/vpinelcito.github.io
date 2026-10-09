@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qcm-app-shell-v1'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
+const CACHE_NAME = 'qcm-app-shell-v1.11'; // Incrémenté à 0.9 pour forcer la mise à jour sur ton navigateur
 
 // Liste corrigée avec les bons fichiers CSS et JS présents dans ton dépôt
 const ASSETS_TO_CACHE = [
@@ -13,7 +13,8 @@ const ASSETS_TO_CACHE = [
   './manifest.json',
   './favicone_20x20.png',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './tick.png'
 ];
 
 self.addEventListener('install', (event) => {

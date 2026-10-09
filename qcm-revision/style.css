@@ -2,9 +2,36 @@
     font-family: Avenir, sans-serif;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 ul{
     list-style: none;
     padding-left: 0px;
+}
+
+input[type="checkbox"].choix {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(200, 216, 237);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    display: inline-block;
+    vertical-align: middle;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"].choix:checked {
+    background-color: rgb(200, 216, 237);
+    border-color: rgb(200, 216, 237);
+    background-image: url("./tick.png")
 }
 
 input[type=checkbox]:not(.choix){
@@ -23,9 +50,34 @@ ul li{
 }
 
 ul ul{
-        display: none;/* flex */
-        flex-flow: column wrap;
-        width: 100%;
-        box-shadow: none;
-        padding-left: 20px;
-    }
+    display: none;/* flex */
+    flex-flow: column wrap;
+    width: 100%;
+    box-shadow: none;
+    padding-left: 20px;
+}
+
+label:has(+ input:checked:not(.choix))::before {
+    content: "▼";
+    font-size: 12px;
+}
+
+label:has(+ input:not(:checked):not(.choix))::before {
+    content: "▶";
+    font-size: 12px;
+}
+
+
+#charger_donnes{
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    width: 112px;
+    margin-top: 40px;
+}
