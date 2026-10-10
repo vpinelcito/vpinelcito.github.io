@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qcm-app-shell-v1.12'; // Incrémentez ici à chaque mise à jour
+const CACHE_NAME = 'qcm-app-shell-v1.13'; // Incrémentez ici à chaque mise à jour
 
 const ASSETS_TO_CACHE = [
   './',
@@ -18,6 +18,14 @@ const ASSETS_TO_CACHE = [
 
 // Fichiers devant impérativement être vérifiés sur le réseau en priorité (Évite le blocage iOS)
 const DYNAMIC_ASSETS = ['index.html', 'manifest.json', '/'];
+
+// --- AJOUT INDISPENSABLE POUR IOS 18 ---
+// Écoute le message envoyé par main.js pour forcer l'activation
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -51,8 +59,9 @@ self.addEventListener('fetch', (event) => {
   if (requestUrl.includes('://://google.com')) return;
 
   // 🚀 STRATÉGIE NETWORK-FIRST pour l'index et le manifest : résout le blocage de mise à jour sur iOS
+  // Correction de la détection : gère "/" et les fichiers critiques plus proprement
   const isCriticalAsset = DYNAMIC_ASSETS.some(asset => 
-    urlObject.pathname.endsWith(asset) || urlObject.pathname === asset
+    urlObject.pathname.endsWith(asset) || urlObject.pathname === asset || (asset === '/' && urlObject.pathname.endsWith('/'))
   );
 
   if (isCriticalAsset) {
