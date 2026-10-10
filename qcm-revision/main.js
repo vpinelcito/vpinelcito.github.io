@@ -209,22 +209,20 @@ document.addEventListener("DOMContentLoaded", verifier_utilisateur);
 window.addEventListener('online', charger_menu);
 window.addEventListener('offline', charger_menu);
 
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        // Enregistrement du Service Worker avec un cache-buster (votre logique actuelle)
-        navigator.serviceWorker.register('./sw.js?t=' + Date.now())
+        // Enregistrement STRICT sans le ?t=Date.now() qui crée des boucles infinies sur iOS
+        navigator.serviceWorker.register('./sw.js')
             .then(reg => {
                 console.log('[PWA] Service Worker enregistré avec succès !');
                 
-                // Détection d'une mise à jour disponible
                 reg.onupdatefound = () => {
                     const newWorker = reg.installing;
                     if (newWorker) {
                         newWorker.onstatechange = () => {
-                            // Le nouveau worker est téléchargé et prêt (état 'installed')
                             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                console.log('[PWA] Nouvelle version détectée ! Envoi de SKIP_WAITING...');
-                                // On ordonne au nouveau worker de tuer l'ancien immédiatement
+                                console.log('[PWA] Nouvelle version détectée !');
                                 newWorker.postMessage({ type: 'SKIP_WAITING' });
                             }
                         };
@@ -234,13 +232,24 @@ if ('serviceWorker' in navigator) {
             .catch(err => console.error('[PWA] Échec de l\'enregistrement :', err));
     });
 
-    // 🚀 CORRECTIF IOS 18 : On recharge la page SEULEMENT quand le switch de worker est validé
     let refreshing = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
         if (!refreshing) {
             refreshing = true;
-            console.log('[PWA] Le nouveau contrôleur s\'est activé. Rechargement de la page...');
+            
+            // 🛡️ ANTI-BOUCLE INFINIE IOS : On vérifie si on a rechargé l'application il y a très peu de temps
+            const lastReload = localStorage.getItem('pwa_last_reload');
+            const now = Date.now();
+            
+            if (lastReload && (now - parseInt(lastReload)) < 30000) {
+                console.warn('[PWA] Rechargement intercepté pour éviter une boucle infinie sur iOS.');
+                return; 
+            }
+            
+            localStorage.setItem('pwa_last_reload', now.toString());
+            console.log('[PWA] Application mise à jour. Rechargement...');
             window.location.reload();
         }
     });
 }
+
