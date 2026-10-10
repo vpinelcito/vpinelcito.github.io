@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qcm-app-shell-v1.1.4'; // Incrémentez ici à chaque mise à jour
+const CACHE_NAME = 'qcm-app-shell-v1.1.5'; // Incrémentez ici à chaque mise à jour
 
 const ASSETS_TO_CACHE = [
   './',
@@ -15,6 +15,16 @@ const ASSETS_TO_CACHE = [
   './icon-512.png',
   './tick.png'
 ];
+
+// Écoute le message envoyé depuis la notification de main.js
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+// Le reste de votre sw.js actuel (CACHE_NAME, ASSETS_TO_CACHE, fetch...) reste inchangé
+
 
 // Fichiers devant impérativement être vérifiés sur le réseau en priorité (Évite le blocage iOS)
 const DYNAMIC_ASSETS = ['index.html', 'manifest.json', '/'];
