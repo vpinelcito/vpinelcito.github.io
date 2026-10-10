@@ -1,4 +1,4 @@
-const CACHE_NAME = 'qcm-app-shell-v1.13'; // Incrémentez ici à chaque mise à jour
+const CACHE_NAME = 'qcm-app-shell-v1.1.4'; // Incrémentez ici à chaque mise à jour
 
 const ASSETS_TO_CACHE = [
   './',
