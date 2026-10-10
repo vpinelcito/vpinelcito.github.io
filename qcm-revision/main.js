@@ -209,47 +209,73 @@ document.addEventListener("DOMContentLoaded", verifier_utilisateur);
 window.addEventListener('online', charger_menu);
 window.addEventListener('offline', charger_menu);
 
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        // Enregistrement STRICT sans le ?t=Date.now() qui crée des boucles infinies sur iOS
+        // Enregistrement propre sans chaîne de requête (cache-buster inutile ici)
         navigator.serviceWorker.register('./sw.js')
             .then(reg => {
                 console.log('[PWA] Service Worker enregistré avec succès !');
+
+                // Si un worker attend déjà au lancement (ex: après une fermeture)
+                if (reg.waiting) {
+                    showUpdateNotification(reg.waiting);
+                }
                 
+                // Détection classique pendant que l'application tourne
                 reg.onupdatefound = () => {
                     const newWorker = reg.installing;
                     if (newWorker) {
                         newWorker.onstatechange = () => {
+                            // On vérifie que le worker est installé et qu'il y a déjà un contrôle actif
                             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                console.log('[PWA] Nouvelle version détectée !');
-                                newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                console.log('[PWA] Une mise à jour est prête !');
+                                showUpdateNotification(newWorker);
                             }
                         };
                     }
                 };
             })
-            .catch(err => console.error('[PWA] Échec de l\'enregistrement :', err));
+            .catch(err => console.error('[PWA] Échec :', err));
     });
 
-    let refreshing = false;
+    // Événement déclenché une fois que SKIP_WAITING a fait son travail
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!refreshing) {
-            refreshing = true;
-            
-            // 🛡️ ANTI-BOUCLE INFINIE IOS : On vérifie si on a rechargé l'application il y a très peu de temps
-            const lastReload = localStorage.getItem('pwa_last_reload');
-            const now = Date.now();
-            
-            if (lastReload && (now - parseInt(lastReload)) < 30000) {
-                console.warn('[PWA] Rechargement intercepté pour éviter une boucle infinie sur iOS.');
-                return; 
-            }
-            
-            localStorage.setItem('pwa_last_reload', now.toString());
-            console.log('[PWA] Application mise à jour. Rechargement...');
-            window.location.reload();
-        }
+        console.log('[PWA] Le nouveau Service Worker a pris le contrôle.');
+        // Sur iOS 18, nous évitons window.location.reload() ici pour bloquer la boucle.
     });
 }
 
+// Fonction pour afficher proprement le bouton de mise à jour à l'utilisateur
+function showUpdateNotification(worker) {
+    // Vérifie si la notification existe déjà pour éviter les doublons
+    if (document.getElementById('pwa-update-banner')) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'pwa-update-banner';
+    banner.innerHTML = `
+        <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); 
+                    background: #222; color: #fff; padding: 15px 20px; border-radius: 8px; 
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; display: flex; 
+                    align-items: center; gap: 15px; font-family: sans-serif; font-size: 14px;">
+            <span>Une nouvelle version est disponible !</span>
+            <button id="pwa-update-btn" style="background: #007aff; color: white; border: none; 
+                       padding: 8px 12px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                Actualiser
+            </button>
+        </div>
+    `;
+    document.body.appendChild(banner);
+
+    document.getElementById('pwa-update-btn').addEventListener('click', () => {
+        // Envoie l'ordre au Service Worker de s'activer
+        worker.postMessage({ type: 'SKIP_WAITING' });
+        
+        // Fait disparaître la bannière
+        banner.remove();
+        
+        // Redirection douce ou rechargement uniquement déclenché par l'action de l'utilisateur
+        setTimeout(() => {
+            window.location.replace(window.location.href);
+        }, 300);
+    });
+}
