@@ -16,9 +16,13 @@ const ASSETS_TO_CACHE = [
   './tick.png'
 ];
 
+// Fichiers devant impérativement être vérifiés sur le réseau en priorité (Évite le blocage iOS)
+const DYNAMIC_ASSETS = ['index.html', 'manifest.json', '/'];
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
+      // Utilisation de allSettled pour éviter qu'un seul asset manquant ne bloque toute l'installation
       Promise.allSettled(ASSETS_TO_CACHE.map((url) => cache.add(url)))
     ).then(() => self.skipWaiting())
   );
@@ -41,21 +45,33 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const requestUrl = event.request.url;
+  const urlObject = new URL(requestUrl);
 
-  if (requestUrl.includes('://://google.com')) {
-    return;
-  }
+  // Filtrer les URL invalides ou externes spécifiques
+  if (requestUrl.includes('://://google.com')) return;
 
-  // 🏆 ENTRAVE AU CACHE : Si l'iPhone cherche le fichier sw.js, on force TOUJOURS le réseau en premier
-  if (requestUrl.includes('sw.js')) {
+  // 🚀 STRATÉGIE NETWORK-FIRST pour l'index et le manifest : résout le blocage de mise à jour sur iOS
+  const isCriticalAsset = DYNAMIC_ASSETS.some(asset => 
+    urlObject.pathname.endsWith(asset) || urlObject.pathname === asset
+  );
+
+  if (isCriticalAsset) {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
+      fetch(event.request)
+        .then((response) => {
+          // On met à jour le cache dynamiquement avec la nouvelle version réseau
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request)) // Mode hors-ligne en dernier recours
     );
     return;
   }
 
-  // STRATÉGIE CIBLÉE : On applique "ignoreSearch" UNIQUEMENT sur la page qcm.html
-  const urlObject = new URL(requestUrl);
+  // STRATÉGIE CACHE-FIRST pour le reste des composants (styles, scripts, images)
   const optionsMatch = urlObject.pathname.endsWith('qcm.html') ? { ignoreSearch: true } : {};
 
   event.respondWith(
