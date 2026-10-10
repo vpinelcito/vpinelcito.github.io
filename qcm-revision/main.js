@@ -211,21 +211,36 @@ window.addEventListener('offline', charger_menu);
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
+        // Enregistrement du Service Worker avec un cache-buster (votre logique actuelle)
         navigator.serviceWorker.register('./sw.js?t=' + Date.now())
             .then(reg => {
                 console.log('[PWA] Service Worker enregistré avec succès !');
+                
+                // Détection d'une mise à jour disponible
                 reg.onupdatefound = () => {
                     const newWorker = reg.installing;
                     if (newWorker) {
                         newWorker.onstatechange = () => {
+                            // Le nouveau worker est téléchargé et prêt (état 'installed')
                             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                console.log('Nouvelle version détectée ! Application des mises à jour...');
-                                window.location.reload();
+                                console.log('[PWA] Nouvelle version détectée ! Envoi de SKIP_WAITING...');
+                                // On ordonne au nouveau worker de tuer l'ancien immédiatement
+                                newWorker.postMessage({ type: 'SKIP_WAITING' });
                             }
                         };
                     }
                 };
             })
             .catch(err => console.error('[PWA] Échec de l\'enregistrement :', err));
+    });
+
+    // 🚀 CORRECTIF IOS 18 : On recharge la page SEULEMENT quand le switch de worker est validé
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+            refreshing = true;
+            console.log('[PWA] Le nouveau contrôleur s\'est activé. Rechargement de la page...');
+            window.location.reload();
+        }
     });
 }
